@@ -41,11 +41,11 @@ convertThemes = (themes) ->
     for code in hexCodes
       array.push(code) if array.indexOf(code) < 0
 
-  # Convert hex codes into RGB
-  for filename, val of colors
+  # # Convert hex codes into RGB
+  # for filename, val of colors
 
-    rgb = (utils.toRgb(hex) for hex in val)
-    colors[filename] = rgb
+  #   rgb = (utils.toRgb(hex) for hex in val)
+  #   colors[filename] = rgb
 
   # Generate colors.json
   json = JSON.stringify(colors)

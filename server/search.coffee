@@ -1,16 +1,6 @@
-_fs = require 'fs'
 _when = require 'when'
 utils = require './utils'
-
-# A simple promise wrapper for Node FS
-fs = (method) ->
-  return (args...) ->
-    deferred = _when.defer()
-    args.push (err, data) ->
-      if err? then return deferred.reject(err)
-      deferred.resolve(data)
-    _fs[method](args...)
-    return deferred.promise
+fs = utils.fs
 
 # Search all the color schemes!
 search = (queryColors, fn) ->
@@ -29,6 +19,7 @@ search = (queryColors, fn) ->
       # Find themes with similar colors
       for filename, colors of themes
         for color in colors
+          color = utils.toRgb(color)
           for query in queryColors
             score = utils.diff(query, color)
             continue unless score < min

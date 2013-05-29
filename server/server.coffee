@@ -1,7 +1,7 @@
 
 express = require 'express'
 fs = require 'fs'
-ImageParser = require './png'
+ImageParser = require './imageParse'
 Search = require './search'
 
 app = express()
