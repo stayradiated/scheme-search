@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <!--
 ======================================================================
 Frontier
@@ -7,10 +5,12 @@ Frontier
 A Sublime Text 2 / Textmate theme.
 Copyright (c) 2012 Dayle Rees.
 Released under the MIT License <http://opensource.org/licenses/MIT>
-======================================================================
+----------------------------------------------------------------------
 Find more themes at : https://github.com/daylerees/colour-schemes
-======================================================================
+----------------------------------------------------------------------
 -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>name</key>
@@ -393,6 +393,6 @@ Find more themes at : https://github.com/daylerees/colour-schemes
 
 	</array>
 	<key>uuid</key>
-	<string>16777B7F-33F3-4EFD-BC60-25C952FF724E</string>
+	<string>D8D5E82E-3D5B-46B5-B38E-8C841C21347D</string>
 </dict>
 </plist>

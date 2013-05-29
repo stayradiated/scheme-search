@@ -37,6 +37,14 @@ module.exports =
     out /= arr.length
     return out
 
+  # Get the average value of the first value of an array inside an array
+  avg_dbl: (arr) ->
+    console.log arr
+    out = 0
+    out += num[0] for num in arr
+    out /= arr.length
+    return out
+
   # A simple promise wrapper for Node FS
   fs: (method) ->
     return (args...) ->

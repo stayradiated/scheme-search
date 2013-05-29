@@ -13,18 +13,18 @@ search = (queryColors, fn) ->
     .then (json) ->
 
       best = {}
-      min = 5
+      min = 10
       themes = JSON.parse(json)
 
       # Find themes with similar colors
       for filename, colors of themes
-        for color in colors
-          color = utils.toRgb(color)
+        for hex in colors
+          color = utils.toRgb(hex)
           for query in queryColors
             score = utils.diff(query, color)
             continue unless score < min
             best[filename] ?= []
-            best[filename].push(score)
+            best[filename].push([score, hex, utils.toHex(query)])
 
       # Sort themes by score
       sorted = []
@@ -34,9 +34,9 @@ search = (queryColors, fn) ->
         len_b = b[1].length
         if len_a > len_b then return -1
         if len_b > len_a then return 1
-        return utils.avg(a[1]) - utils.avg(b[1])
+        return utils.avg_dbl(a[1]) - utils.avg_dbl(b[1])
 
-      fn(sorted[0...10])
+      fn(sorted)
 
     .otherwise (err) ->
       console.error(err)

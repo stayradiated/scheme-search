@@ -35,7 +35,7 @@ getColors = (coords, fn) ->
     hex = sorted.map (x) -> x[0]
 
     # Send hex codes to client
-    fn(null, JSON.stringify(hex[0..10]))
+    fn(null, JSON.stringify(hex[0...10]))
 
 
 # Pipes stream into the getColors method

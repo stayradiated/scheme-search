@@ -8,8 +8,6 @@
 	<string>Base16 Green Screen Dark</string>
 	<key>semanticClass</key>
 	<string>base16.greenscreen.dark</string>
-	<key>colorSpaceName</key>
-	<string>sRGB</string>
 	<key>gutterSettings</key>
 	<dict>
 		<key>background</key>
@@ -123,7 +121,7 @@
 			<key>name</key>
 			<string>Functions</string>
 			<key>scope</key>
-			<string>entity.name.function, meta.require, support.function.any-method</string>
+			<string>entity.name.function, meta.function-call, meta.require</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -409,8 +407,10 @@
 			<string>markup.inserted</string>
 			<key>settings</key>
 			<dict>
-				<key>foreground</key>
+				<key>background</key>
 				<string>#00bb00</string>
+				<key>foreground</key>
+				<string>#001100</string>
 			</dict>
 		</dict>
 		<dict>
@@ -420,24 +420,15 @@
 			<string>markup.deleted</string>
 			<key>settings</key>
 			<dict>
-				<key>foreground</key>
+				<key>background</key>
 				<string>#007700</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Changed</string>
-			<key>scope</key>
-			<string>markup.changed</string>
-			<key>settings</key>
-			<dict>
 				<key>foreground</key>
-				<string>#00bb00</string>
+				<string>#001100</string>
 			</dict>
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Colors</string>
+			<string>Colours</string>
 			<key>scope</key>
 			<string>constant.other.color</string>
 			<key>settings</key>
@@ -481,19 +472,45 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>Invalid</string>
+			<string>diff.deleted</string>
 			<key>scope</key>
-			<string>invalid.illegal</string>
+			<string>markup.deleted</string>
 			<key>settings</key>
 			<dict>
-				<key>background</key>
-				<string>#007700</string>
 				<key>foreground</key>
-				<string>#001100</string>
+				<string>#007700</string>
+				<key>background</key>
+				<string>#003300</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>diff.inserted</string>
+			<key>scope</key>
+			<string>markup.inserted</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#00bb00</string>
+				<key>background</key>
+				<string>#003300</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>diff.changed</string>
+			<key>scope</key>
+			<string>markup.changed</string>
+			<key>settings</key>
+			<dict>
+				<key>foreground</key>
+				<string>#00bb00</string>
+				<key>background</key>
+				<string>#003300</string>
 			</dict>
 		</dict>
 	</array>
 	<key>uuid</key>
-	<string>ad008271-1f65-4e46-ac9f-21f2008c652e</string>
+	<string>3a117f5f-27ef-467e-9f80-7120f1d043af</string>
 </dict>
 </plist>

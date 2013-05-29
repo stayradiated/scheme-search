@@ -17,7 +17,30 @@
 
   <ul class="group" id="colors"></ul>
 
-  <ol class="group" id="results"></ol>
+  <button id="search">Search</button>
+
+  <div class="group" id="results"></div>
+
+  <script type="text/template" id="results-template">
+    <% for (var i = 0; i < results.length; i++ ) { %>
+      <section class="result group">
+        <div class="title"><%= results[i][0] %></div>
+        <% var avg = 0 %>
+        <% for ( var j = 0; j < results[i][1].length; j++ ) { %>
+          <% var color = results[i][1][j][1]; %>
+          <% var query = results[i][1][j][2]; %>
+          <% var score = Math.floor(results[i][1][j][0] * 100) / 100 %>
+          <% avg += score %>
+          <div class="color">
+            <div class="match" style="background: <%= color %>"><%= score %></div>
+            <div class="query" style="background: <%= query %>"><%= query %></div>
+          </div>
+        <% } %>
+        <% avg /= results[i][1].length %>
+        Score: <%= avg %>
+      </section>
+    <% } %>
+  </script>
 
   <script src="js/libs/jquery.js"></script>
   <script src="js/libs/jcrop.js"></script>
@@ -29,6 +52,9 @@
   <script src="js/views.js"></script>
 
   <script>
+
+    // Stores colors
+    App.colors = new App.Collections.Colors();
 
     // Init app
     new App.Views.App();

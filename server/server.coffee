@@ -28,4 +28,4 @@ app.post '/search', (req, res) ->
     res.setHeader('Content-Type', 'application/json')
     res.send JSON.stringify(results)
 
-app.listen(8080)
+app.listen(1337)

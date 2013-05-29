@@ -3,22 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>Solarized (Light)</string>
-	<key>semanticClass</key>
-	<string>theme.light.solarized</string>
-	<key>gutterSettings</key>
-	<dict>
-		<key>background</key>
-		<string>#eee8d5</string>
-		<key>divider</key>
-		<string>#93a1a1</string>
-		<key>foreground</key>
-		<string>#657b83</string>
-		<key>selectionBackground</key>
-		<string>#93a1a1</string>
-		<key>selectionForeground</key>
-		<string>#586e75</string>
-	</dict>
+	<string>Solarized (light)</string>
 	<key>settings</key>
 	<array>
 		<dict>
@@ -33,9 +18,9 @@
 				<key>invisibles</key>
 				<string>#EAE3C9</string>
 				<key>lineHighlight</key>
-				<string>#eee8d5</string>
+				<string>#EEE8D5</string>
 				<key>selection</key>
-				<string>#eee8d5</string>
+				<string>#073642</string>
 			</dict>
 		</dict>
 		<dict>
@@ -485,10 +470,10 @@
 			<key>scope</key>
 			<string>entity.other.attribute-name.class.css</string>
 			<key>settings</key>
-			<dict>
+            <dict>
 				<key>fontStyle</key>
 				<string></string>
-				<key>foreground</key>
+                <key>foreground</key>
 				<string>#268BD2</string>
 			</dict>
 		</dict>
@@ -511,10 +496,10 @@
 			<key>scope</key>
 			<string>entity.other.attribute-name.id.css</string>
 			<key>settings</key>
-			<dict>
+            <dict>
 				<key>fontStyle</key>
 				<string></string>
-				<key>foreground</key>
+                <key>foreground</key>
 				<string>#268BD2</string>
 			</dict>
 		</dict>
@@ -620,7 +605,7 @@
 				<key>foreground</key>
 				<string>#899090</string>
 			</dict>
-		</dict>
+    	</dict>
 		<dict>
 			<key>name</key>
 			<string>HTML: Comment Block</string>
@@ -634,7 +619,7 @@
 				<string>#839496</string>
 			</dict>
 		</dict>
-		<dict>
+    	<dict>
 			<key>name</key>
 			<string>HTML: Script</string>
 			<key>scope</key>
@@ -1875,131 +1860,16 @@
 				<string>#DC322F</string>
 			</dict>
 		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markdown: List</string>
-			<key>scope</key>
-			<string>punctuation.definition.list_item.markdown</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#268bd2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markup: Heading</string>
-			<key>scope</key>
-			<string>markup.heading</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#b58900</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markdown: Link</string>
-			<key>scope</key>
-			<string>meta.link.inline.markdown,  string.other.link.title.markdown</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#859900</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markdown: Image</string>
-			<key>scope</key>
-			<string>meta.image.inline.markdown, string.other.link.description.markdown</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#859900</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markdown: Heading entity name</string>
-			<key>scope</key>
-			<string>entity.name.section.markdown</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#CB4B16</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markdown: separator</string>
-			<key>scope</key>
-			<string>meta.separator.markdown</string>
-			<key>settings</key>
-			<dict>
-				<key>background</key>
-				<string>#FDF6E3</string>
-				<key>foreground</key>
-				<string>#268bd2</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markdown: code block</string>
-			<key>scope</key>
-			<string>markup.raw.block.markdown</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#b58900</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markdown: code inline</string>
-			<key>scope</key>
-			<string>markup.raw.inline.markdown</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#b58900</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markdown: punctuation definition</string>
-			<key>scope</key>
-			<string>punctuation.definition.raw.markdown, punctuation.definition.italic.markdown, punctuation.definition.bold.markdown, punctuation.definition.string.begin.markdown,punctuation.definition.string.end.markdown,punctuation.definition.metadata.markdown</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#93a1a1</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markdown: blockquote punctuation definition</string>
-			<key>scope</key>
-			<string>punctuation.definition.blockquote.markdown</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#2aa198</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>text plain</string>
-			<key>scope</key>
-			<string>text.plain</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#6a8187</string>
-			</dict>
-		</dict>
 	</array>
 	<key>uuid</key>
 	<string>38E819D9-AE02-452F-9231-ECC3B204AFD7</string>
+	<key>license</key>
+	<string>
+	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+	The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+	</string>
 </dict>
 </plist>

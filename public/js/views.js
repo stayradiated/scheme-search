@@ -1,19 +1,28 @@
 
+/* ------------------------------------------------------------------------- *
+   View: App
+ * ------------------------------------------------------------------------- */
+
 App.Views.App = Backbone.View.extend({
+
+  el: $('body'),
+
+  events: {
+    'click #search': 'search'
+  },
 
   initialize: function() {
     this.form = new App.Views.Form();
     this.preview = new App.Views.Preview();
     this.colors = new App.Views.Colors();
     this.results = new App.Views.Results();
-    App.Vent.on('received:colors', this.search, this);
   },
 
   search: function(hexCodes) {
     $.ajax({
-      url: 'http://localhost:8080/search',
+      url: 'http://localhost:1337/search',
       method: 'POST',
-      data: {query: JSON.stringify(hexCodes)},
+      data: {query: JSON.stringify(App.colors.enabled())},
       dataType: 'json',
       success: function(results) {
         App.Vent.trigger('received:results', results);
@@ -23,8 +32,12 @@ App.Views.App = Backbone.View.extend({
       }
     });
   }
-
 });
+
+
+/* ------------------------------------------------------------------------- *
+   View: Preview
+ * ------------------------------------------------------------------------- */
 
 App.Views.Preview = Backbone.View.extend({
 
@@ -56,9 +69,12 @@ App.Views.Preview = Backbone.View.extend({
   crop: function(coords) {
     App.coords = coords;
   }
-
 });
 
+
+/* ------------------------------------------------------------------------- *
+   View: Form
+ * ------------------------------------------------------------------------- */
 
 App.Views.Form = Backbone.View.extend({
 
@@ -93,7 +109,7 @@ App.Views.Form = Backbone.View.extend({
     formData.append('coords[]', JSON.stringify(App.coords || {}));
 
     $.ajax({
-      url: 'http://localhost:8080/upload',
+      url: 'http://localhost:1337/upload',
       type: 'POST',
       data: formData,
       processData: false,
@@ -103,39 +119,81 @@ App.Views.Form = Backbone.View.extend({
         App.Vent.trigger('received:colors', data);
       }
     });
+  }
+});
 
+/* ------------------------------------------------------------------------- *
+   View: Color
+ * ------------------------------------------------------------------------- */
+
+App.Views.Color = Backbone.View.extend({
+
+  tagName: 'li',
+  className: 'color',
+
+  events: {
+    'click': 'toggle'
+  },
+
+  initialize: function() {
+    this.model.on('change:enabled', this.render, this);
+  },
+
+  toggle: function() {
+    this.model.toggle();
+  },
+
+  render: function() {
+    this.$el.css('background', this.model.get('color'));
+    this.$el.toggleClass('disabled', !this.model.get('enabled'));
+    return this;
   }
 
 });
 
-
+/* ------------------------------------------------------------------------- *
+   View: Colors
+ * ------------------------------------------------------------------------- */
 App.Views.Colors = Backbone.View.extend({
 
   el: '#colors',
 
   initialize: function() {
-    console.log('listening for colors');
-    App.Vent.on('received:colors', this.render, this);
+    App.Vent.on('received:colors', this.load, this);
+    App.colors.on('add', this.addOne, this);
+  },
+
+  load: function(hexCodes) {
+    App.colors.reset();
+    this.$el.empty();
+    for ( var i = 0; i < hexCodes.length; i++ ) {
+      App.colors.add({ color: hexCodes[i] });
+    }
   },
 
   render: function (hexCodes) {
-    console.log('rendering colors');
     this.$el.empty();
-    var len = hexCodes.length;
-    for ( var i = 0; i < len; i++ ) {
-      hex = hexCodes[i];
-      var el = $('<li class="color">' + hex + '</li>');
-      el.css('background', hex);
-      this.$el.append(el);
-    }
-  }
+    App.colors.each(function(color) {
+      this.addOne(color);
+    }, this);
+  },
 
+  addOne: function(model) {
+    var view = new App.Views.Color({ model: model });
+    this.$el.append(view.render().el);
+  }
 });
 
+
+/* ------------------------------------------------------------------------- *
+   View: Results
+ * ------------------------------------------------------------------------- */
 
 App.Views.Results = Backbone.View.extend({
 
   el: '#results',
+
+  template: _.template($('#results-template').html()),
 
   initialize: function() {
     console.log('initialized results');
@@ -143,13 +201,6 @@ App.Views.Results = Backbone.View.extend({
   },
 
   render: function (results) {
-    console.log('rendering results');
-    this.$el.empty();
-    var len = results.length;
-    for ( var i = 0; i < len; i++ ) {
-      var filename = results[i][0]
-      var el = $('<li>' + filename + '</li>');
-      this.$el.append(el);
-    }
+    this.$el.html(this.template({ results: results }));
   }
 });
