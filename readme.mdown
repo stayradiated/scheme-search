@@ -1,0 +1,19 @@
+
+# The Theme Finder ...
+
+If you know a hex code or two, it will look for themes with similar colours.
+
+Not sure how well it will work.
+
+## Steps
+
+1. Parse tmTheme files and extract all hex codes
+2. Get rid of duplicate hex codes
+3. Export a special file with just the hex codes (in RGB format) for each theme
+
+4. When a user searches for a colour scheme, turn the hex code into RGB
+5. Search through each scheme in the database looking for ones that have a similar color. Allow the user to specify the fuzziness of the match.
+6. Sort the searches by how many colours it matched and how close each match was.
+7. Return the top 10 themes.
+
+

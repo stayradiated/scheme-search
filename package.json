@@ -1,0 +1,14 @@
+{
+  "name": "ThemeFinder",
+  "version": "0.0.1",
+  "description": "Find Color Schemes that match a specified color",
+  "main": "index.js",
+  "author": "George Czabania <george@czabania.com>",
+  "license": "BSD",
+  "readmeFilename": "readme.mdown",
+  "dependencies": {
+    "when": "*",
+    "pngjs": "*",
+    "express": "*"
+  }
+}

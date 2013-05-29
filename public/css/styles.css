@@ -1,0 +1,25 @@
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#colors {
+  margin: 0;
+  padding: 0;
+}
+
+.color {
+  width: 100px;
+  height: 100px;
+  float: left;
+  list-style-type: none;
+}
+
+#results {
+
+}
+
+.result {
+
+}

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Color Scheme Search</title>
+  <link rel=stylesheet href="css/styles.css">
+  <link rel=stylesheet href="css/jcrop.css">
+</head>
+<body>
+
+  <form id="upload" action="http://localhost:8080/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="image">
+    <input type="submit" name="Upload">
+  </form>
+
+  <div id="preview"></div>
+
+  <ul class="group" id="colors"></ul>
+
+  <ol class="group" id="results"></ol>
+
+  <script src="js/libs/jquery.js"></script>
+  <script src="js/libs/jcrop.js"></script>
+  <script src="js/libs/underscore.js"></script>
+  <script src="js/libs/backbone.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/models.js"></script>
+  <script src="js/collections.js"></script>
+  <script src="js/views.js"></script>
+
+  <script>
+
+    // Init app
+    new App.Views.App();
+
+  </script>
+
+</body>
+</html>
